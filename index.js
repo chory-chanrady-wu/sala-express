@@ -176,7 +176,7 @@ app.post("/api/v1/products", async (req, res) => {
   }
 });
 
-app.post("/api/v1/categories", authMiddleware, async (req, res) => {
+app.post("/api/v1/categories", async (req, res) => {
   // Business logic
 
   const name = req.body.name;
@@ -190,7 +190,7 @@ app.post("/api/v1/categories", authMiddleware, async (req, res) => {
   });
 });
 
-app.get("/api/v1/categories", authMiddleware, async (req, res) => {
+app.get("/api/v1/categories", async (req, res) => {
   const categories = await Category.findAll({
     include: [
       {
